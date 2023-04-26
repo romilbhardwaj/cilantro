@@ -16,7 +16,7 @@ For more details, please refer to our [OSDI 2023 paper](#).
 
 ## Running Cilantro Experiments
 
-Below we link to two examples of running Cilantro on Kubernetes clusters. These experiments were used in our OSDI 2023 paper.
+Below we link to two examples of running Cilantro on Kubernetes clusters. These experiments were used in our paper.
 
 ### [Microservices experiments](./experiments/microservices/README.md)
 
@@ -41,8 +41,8 @@ Please follow [`experiments/cluster_sharing/README.md`](./experiments/cluster_sh
   * [`./cilantro/backends`](./cilantro/backends) contains different event sources (gRPC, Kubernetes, timer) supported in Cilantro.
   * [`./cilantro/learners`](./cilantro/learners) contains implementations of different online learning algorithms used in Cilantro.
   * [`./cilantro/scheduler`](./cilantro/scheduler) contains the main scheduler loop.
-* [`./experiments`](./experiments) contains the code for running Cilantro experiments presented in our OSDI 2023 paper.
-* [cilantro-workloads](https://github.com/romilbhardwaj/cilantro-workloads) is a sister repository that contains the workloads used in our OSDI 2023 paper. These workloads are already compiled and pushed to Cilantro's ECR repository.
+* [`./experiments`](./experiments) contains the code for running Cilantro experiments presented in our paper.
+* [cilantro-workloads](https://github.com/romilbhardwaj/cilantro-workloads) is a sister repository that contains the workloads used in our paper. These workloads are already compiled and pushed to Cilantro's ECR repository.
 
 ## Notes
 * If you'd like to build your own image for Cilantro, please refer to [`./eks/README.md`](./eks/README.md) for instructions on how to create your own image registry on AWS ECR and build/push cilantro images to it.
