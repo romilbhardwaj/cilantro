@@ -1,6 +1,6 @@
 # Reads a fixed config yaml and generates configurations specified in the POLICIES variable
 
-POLICIES = ['mmf'] #, 'mmflearn', 'utilwelforacle', 'utilwelflearn', 'evoutil', 'egalwelforacle', 'egalwelflearn', 'evoegal', 'greedyegal', 'minerva', 'ernest', 'quasar', 'parties', 'multincadddec'] # Exclude propfair
+POLICIES = ['mmf', 'mmflearn', 'utilwelforacle', 'utilwelflearn', 'evoutil', 'egalwelforacle', 'egalwelflearn', 'evoegal', 'greedyegal', 'minerva', 'ernest', 'quasar', 'parties', 'multincadddec'] # Exclude propfair
 
 with open('config_cilantro_scheduler_propfair.yaml') as f:
     # Read as str

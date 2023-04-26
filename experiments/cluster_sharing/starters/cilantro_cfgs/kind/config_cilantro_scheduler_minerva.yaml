@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cilantroscheduler
+  labels:
+    app: cilantroscheduler
+spec:
+  backoffLimit: 0
+  manualSelector: true
+  selector:
+    matchLabels:
+      app: cilantroscheduler
+  template:
+    metadata:
+      labels:
+        app: cilantroscheduler
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: cilantroscheduler
+        image: public.ecr.aws/cilantro/cilantro:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10000
+        command: [ "python", "/cilantro/demos/exp1/cilantro_driver.py"]
+        args: ["--profiled-info-dir", "/cilantro/demos/exp1/profiled_oct7",
+               "--real-or-dummy", "real", "--cluster-type", "eks",
+               "--env-descr", "exp_env_1", "--policy", "minerva"
+               ]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cilantro-service
+spec:
+  selector:
+    app: cilantroscheduler
+  ports:
+    - protocol: TCP
+      port: 10000
+      targetPort: 10000
