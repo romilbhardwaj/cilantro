@@ -7,8 +7,7 @@
 </p>
 
 Cilantro is a scheduling framework for performance-aware allocation of resources 
-among competing jobs. Unlike other schedulers, which require jobs to state  
-resource demands, Cilantro applies online-learning to dynamically allocate resources 
+among competing jobs. Unlike other schedulers, which require jobs to state resource demands, Cilantro applies online-learning to dynamically allocate resources 
 optimizing for the user stated [objective](https://github.com/romilbhardwaj/cilantro/cilantro/policies).
 Objectives may be defined on individual utilities reported by jobs, such as 
 latency and throughput SLOs.
