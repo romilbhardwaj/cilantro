@@ -51,7 +51,7 @@ If you do not have access cloud or a kubernetes cluster, you can use kind to pro
  
 
 ## Running the cluster sharing experiment and launching Cilantro
-1. Launch the cluster sharing experiment by running the commands below, launch cilantro scheduler and hr-client (which starts sending queries to the microservices). You can set the qps scale (load) in `./starters/hotel-res/cilantro-hr-client.yaml` by changing the --wrk-qps arg)
+1. Launch the cluster sharing experiment for a specific policy by running the commands below:
    ```sh
    # Set the policy to run - propfair, mmf, mmflearn, utilwelforacle, utilwelflearn, evoutil, egalwelforacle, egalwelflearn, evoegal, greedyegal, minerva, ernest, quasar, parties, multincadddec
    POLICY=propfair
