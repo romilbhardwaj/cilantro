@@ -1,0 +1,251 @@
+5
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java -cp /ycsb/cassandra-binding/conf:/ycsb/conf:/ycsb/lib/HdrHistogram-2.1.4.jar:/ycsb/lib/htrace-core4-4.1.0-incubating.jar:/ycsb/lib/jackson-core-asl-1.9.4.jar:/ycsb/lib/core-0.14.0.jar:/ycsb/lib/jackson-mapper-asl-1.9.4.jar:/ycsb/cassandra-binding/lib/cassandra-binding-0.14.0.jar:/ycsb/cassandra-binding/lib/metrics-core-3.1.2.jar:/ycsb/cassandra-binding/lib/slf4j-api-1.7.25.jar:/ycsb/cassandra-binding/lib/cassandra-driver-core-3.0.0.jar:/ycsb/cassandra-binding/lib/netty-handler-4.0.33.Final.jar:/ycsb/cassandra-binding/lib/netty-codec-4.0.33.Final.jar:/ycsb/cassandra-binding/lib/netty-transport-4.0.33.Final.jar:/ycsb/cassandra-binding/lib/guava-16.0.1.jar:/ycsb/cassandra-binding/lib/netty-common-4.0.33.Final.jar:/ycsb/cassandra-binding/lib/netty-buffer-4.0.33.Final.jar com.yahoo.ycsb.Client -db com.yahoo.ycsb.db.CassandraCQLClient -p readproportion=1 -p updateproportion=0 -p hosts=cassandra-server-seed -P /ycsb/workloads/workloada -p hdrhistogram.percentiles=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99 -threads 16 -p operationcount=1000 -p recordcount=5000 -t
+Command line: -db com.yahoo.ycsb.db.CassandraCQLClient -p readproportion=1 -p updateproportion=0 -p hosts=cassandra-server-seed -P /ycsb/workloads/workloada -p hdrhistogram.percentiles=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99 -threads 16 -p operationcount=1000 -p recordcount=5000 -t
+YCSB Client 0.14.0
+
+Loading workload...
+Starting test.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.PlatformDependent0 (file:/ycsb/cassandra-binding/lib/netty-common-4.0.33.Final.jar) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.PlatformDependent0
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Oct 01, 2021 10:33:32 PM io.netty.util.internal.PlatformDependent <clinit>
+INFO: Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+[OVERALL], RunTime(ms), 3435
+[OVERALL], Throughput(ops/sec), 291.1208151382824
+[TOTAL_GCS_G1_Young_Generation], Count, 2
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 15
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.43668122270742354
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 2
+[TOTAL_GC_TIME], Time(ms), 15
+[TOTAL_GC_TIME_%], Time(%), 0.43668122270742354
+[READ], Operations, 1000
+[READ], AverageLatency(us), 6989.466
+[READ], MinLatency(us), 1052
+[READ], MaxLatency(us), 69247
+[READ], 1stPercentileLatency(us), 1583
+[READ], 2ndPercentileLatency(us), 1837
+[READ], 3rdPercentileLatency(us), 2035
+[READ], 4thPercentileLatency(us), 2209
+[READ], 5thPercentileLatency(us), 2325
+[READ], 6thPercentileLatency(us), 2419
+[READ], 7thPercentileLatency(us), 2509
+[READ], 8thPercentileLatency(us), 2623
+[READ], 9thPercentileLatency(us), 2733
+[READ], 10thPercentileLatency(us), 2787
+[READ], 11thPercentileLatency(us), 2871
+[READ], 12thPercentileLatency(us), 3023
+[READ], 13thPercentileLatency(us), 3115
+[READ], 14thPercentileLatency(us), 3195
+[READ], 15thPercentileLatency(us), 3277
+[READ], 16thPercentileLatency(us), 3349
+[READ], 17thPercentileLatency(us), 3477
+[READ], 18thPercentileLatency(us), 3525
+[READ], 19thPercentileLatency(us), 3597
+[READ], 20thPercentileLatency(us), 3709
+[READ], 21stPercentileLatency(us), 3777
+[READ], 22ndPercentileLatency(us), 3829
+[READ], 23rdPercentileLatency(us), 3899
+[READ], 24thPercentileLatency(us), 3981
+[READ], 25thPercentileLatency(us), 4023
+[READ], 26thPercentileLatency(us), 4107
+[READ], 27thPercentileLatency(us), 4179
+[READ], 28thPercentileLatency(us), 4251
+[READ], 29thPercentileLatency(us), 4307
+[READ], 30thPercentileLatency(us), 4359
+[READ], 31stPercentileLatency(us), 4423
+[READ], 32ndPercentileLatency(us), 4459
+[READ], 33rdPercentileLatency(us), 4527
+[READ], 34thPercentileLatency(us), 4571
+[READ], 35thPercentileLatency(us), 4599
+[READ], 36thPercentileLatency(us), 4631
+[READ], 37thPercentileLatency(us), 4711
+[READ], 38thPercentileLatency(us), 4767
+[READ], 39thPercentileLatency(us), 4827
+[READ], 40thPercentileLatency(us), 4899
+[READ], 41stPercentileLatency(us), 4979
+[READ], 42ndPercentileLatency(us), 4999
+[READ], 43rdPercentileLatency(us), 5079
+[READ], 44thPercentileLatency(us), 5175
+[READ], 45thPercentileLatency(us), 5211
+[READ], 46thPercentileLatency(us), 5283
+[READ], 47thPercentileLatency(us), 5315
+[READ], 48thPercentileLatency(us), 5367
+[READ], 49thPercentileLatency(us), 5427
+[READ], 50thPercentileLatency(us), 5507
+[READ], 51stPercentileLatency(us), 5543
+[READ], 52ndPercentileLatency(us), 5603
+[READ], 53rdPercentileLatency(us), 5719
+[READ], 54thPercentileLatency(us), 5823
+[READ], 55thPercentileLatency(us), 5927
+[READ], 56thPercentileLatency(us), 6031
+[READ], 57thPercentileLatency(us), 6115
+[READ], 58thPercentileLatency(us), 6187
+[READ], 59thPercentileLatency(us), 6231
+[READ], 60thPercentileLatency(us), 6335
+[READ], 61stPercentileLatency(us), 6431
+[READ], 62ndPercentileLatency(us), 6503
+[READ], 63rdPercentileLatency(us), 6579
+[READ], 64thPercentileLatency(us), 6647
+[READ], 65thPercentileLatency(us), 6731
+[READ], 66thPercentileLatency(us), 6843
+[READ], 67thPercentileLatency(us), 6971
+[READ], 68thPercentileLatency(us), 7071
+[READ], 69thPercentileLatency(us), 7139
+[READ], 70thPercentileLatency(us), 7239
+[READ], 71stPercentileLatency(us), 7339
+[READ], 72ndPercentileLatency(us), 7435
+[READ], 73rdPercentileLatency(us), 7547
+[READ], 74thPercentileLatency(us), 7663
+[READ], 75thPercentileLatency(us), 7787
+[READ], 76thPercentileLatency(us), 7903
+[READ], 77thPercentileLatency(us), 8035
+[READ], 78thPercentileLatency(us), 8139
+[READ], 79thPercentileLatency(us), 8263
+[READ], 80thPercentileLatency(us), 8391
+[READ], 81stPercentileLatency(us), 8487
+[READ], 82ndPercentileLatency(us), 8639
+[READ], 83rdPercentileLatency(us), 8775
+[READ], 84thPercentileLatency(us), 8943
+[READ], 85thPercentileLatency(us), 9143
+[READ], 86thPercentileLatency(us), 9303
+[READ], 87thPercentileLatency(us), 9503
+[READ], 88thPercentileLatency(us), 9679
+[READ], 89thPercentileLatency(us), 9935
+[READ], 90thPercentileLatency(us), 10047
+[READ], 91stPercentileLatency(us), 10367
+[READ], 92ndPercentileLatency(us), 10839
+[READ], 93rdPercentileLatency(us), 11119
+[READ], 94thPercentileLatency(us), 11503
+[READ], 95thPercentileLatency(us), 12655
+[READ], 96thPercentileLatency(us), 14087
+[READ], 97thPercentileLatency(us), 15215
+[READ], 98thPercentileLatency(us), 16767
+[READ], 99thPercentileLatency(us), 61439
+[READ], Return=OK, 1000
+[CLEANUP], Operations, 16
+[CLEANUP], AverageLatency(us), 138948.25
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 2224127
+[CLEANUP], 1stPercentileLatency(us), 0
+[CLEANUP], 2ndPercentileLatency(us), 0
+[CLEANUP], 3rdPercentileLatency(us), 0
+[CLEANUP], 4thPercentileLatency(us), 0
+[CLEANUP], 5thPercentileLatency(us), 0
+[CLEANUP], 6thPercentileLatency(us), 0
+[CLEANUP], 7thPercentileLatency(us), 0
+[CLEANUP], 8thPercentileLatency(us), 0
+[CLEANUP], 9thPercentileLatency(us), 0
+[CLEANUP], 10thPercentileLatency(us), 1
+[CLEANUP], 11thPercentileLatency(us), 1
+[CLEANUP], 12thPercentileLatency(us), 1
+[CLEANUP], 13thPercentileLatency(us), 1
+[CLEANUP], 14thPercentileLatency(us), 1
+[CLEANUP], 15thPercentileLatency(us), 1
+[CLEANUP], 16thPercentileLatency(us), 1
+[CLEANUP], 17thPercentileLatency(us), 1
+[CLEANUP], 18thPercentileLatency(us), 1
+[CLEANUP], 19thPercentileLatency(us), 1
+[CLEANUP], 20thPercentileLatency(us), 1
+[CLEANUP], 21stPercentileLatency(us), 1
+[CLEANUP], 22ndPercentileLatency(us), 1
+[CLEANUP], 23rdPercentileLatency(us), 1
+[CLEANUP], 24thPercentileLatency(us), 1
+[CLEANUP], 25thPercentileLatency(us), 1
+[CLEANUP], 26thPercentileLatency(us), 1
+[CLEANUP], 27thPercentileLatency(us), 1
+[CLEANUP], 28thPercentileLatency(us), 1
+[CLEANUP], 29thPercentileLatency(us), 1
+[CLEANUP], 30thPercentileLatency(us), 1
+[CLEANUP], 31stPercentileLatency(us), 1
+[CLEANUP], 32ndPercentileLatency(us), 1
+[CLEANUP], 33rdPercentileLatency(us), 1
+[CLEANUP], 34thPercentileLatency(us), 1
+[CLEANUP], 35thPercentileLatency(us), 1
+[CLEANUP], 36thPercentileLatency(us), 1
+[CLEANUP], 37thPercentileLatency(us), 1
+[CLEANUP], 38thPercentileLatency(us), 1
+[CLEANUP], 39thPercentileLatency(us), 1
+[CLEANUP], 40thPercentileLatency(us), 1
+[CLEANUP], 41stPercentileLatency(us), 1
+[CLEANUP], 42ndPercentileLatency(us), 1
+[CLEANUP], 43rdPercentileLatency(us), 1
+[CLEANUP], 44thPercentileLatency(us), 1
+[CLEANUP], 45thPercentileLatency(us), 1
+[CLEANUP], 46thPercentileLatency(us), 1
+[CLEANUP], 47thPercentileLatency(us), 1
+[CLEANUP], 48thPercentileLatency(us), 1
+[CLEANUP], 49thPercentileLatency(us), 1
+[CLEANUP], 50thPercentileLatency(us), 1
+[CLEANUP], 51stPercentileLatency(us), 1
+[CLEANUP], 52ndPercentileLatency(us), 1
+[CLEANUP], 53rdPercentileLatency(us), 1
+[CLEANUP], 54thPercentileLatency(us), 1
+[CLEANUP], 55thPercentileLatency(us), 1
+[CLEANUP], 56thPercentileLatency(us), 1
+[CLEANUP], 57thPercentileLatency(us), 1
+[CLEANUP], 58thPercentileLatency(us), 1
+[CLEANUP], 59thPercentileLatency(us), 1
+[CLEANUP], 60thPercentileLatency(us), 1
+[CLEANUP], 61stPercentileLatency(us), 1
+[CLEANUP], 62ndPercentileLatency(us), 1
+[CLEANUP], 63rdPercentileLatency(us), 1
+[CLEANUP], 64thPercentileLatency(us), 1
+[CLEANUP], 65thPercentileLatency(us), 1
+[CLEANUP], 66thPercentileLatency(us), 1
+[CLEANUP], 67thPercentileLatency(us), 1
+[CLEANUP], 68thPercentileLatency(us), 1
+[CLEANUP], 69thPercentileLatency(us), 1
+[CLEANUP], 70thPercentileLatency(us), 1
+[CLEANUP], 71stPercentileLatency(us), 1
+[CLEANUP], 72ndPercentileLatency(us), 2
+[CLEANUP], 73rdPercentileLatency(us), 2
+[CLEANUP], 74thPercentileLatency(us), 2
+[CLEANUP], 75thPercentileLatency(us), 2
+[CLEANUP], 76thPercentileLatency(us), 2
+[CLEANUP], 77thPercentileLatency(us), 2
+[CLEANUP], 78thPercentileLatency(us), 2
+[CLEANUP], 79thPercentileLatency(us), 2
+[CLEANUP], 80thPercentileLatency(us), 2
+[CLEANUP], 81stPercentileLatency(us), 2
+[CLEANUP], 82ndPercentileLatency(us), 2
+[CLEANUP], 83rdPercentileLatency(us), 2
+[CLEANUP], 84thPercentileLatency(us), 2
+[CLEANUP], 85thPercentileLatency(us), 16
+[CLEANUP], 86thPercentileLatency(us), 16
+[CLEANUP], 87thPercentileLatency(us), 16
+[CLEANUP], 88thPercentileLatency(us), 16
+[CLEANUP], 89thPercentileLatency(us), 16
+[CLEANUP], 90thPercentileLatency(us), 16
+[CLEANUP], 91stPercentileLatency(us), 38
+[CLEANUP], 92ndPercentileLatency(us), 38
+[CLEANUP], 93rdPercentileLatency(us), 38
+[CLEANUP], 94thPercentileLatency(us), 38
+[CLEANUP], 95thPercentileLatency(us), 38
+[CLEANUP], 96thPercentileLatency(us), 38
+[CLEANUP], 97thPercentileLatency(us), 2224127
+[CLEANUP], 98thPercentileLatency(us), 2224127
+[CLEANUP], 99thPercentileLatency(us), 2224127

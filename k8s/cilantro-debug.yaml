@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cilantro-dbg
+  labels:
+    app: cilantro-dbg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cilantro-dbg
+  template:
+    metadata:
+      labels:
+        app: cilantro-dbg
+    spec:
+      containers:
+      - name: cilantro-dbg
+        image: public.ecr.aws/cilantro/cilantro:latest
+        ports:
+        - containerPort: 10000
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]

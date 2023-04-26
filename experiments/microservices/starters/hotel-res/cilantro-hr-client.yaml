@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hr-client
+  labels:
+    death-star-project: hotel-res
+    app: hr-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      death-star-project: hotel-res
+      app: hr-client
+  template:
+    metadata:
+      labels: 
+        death-star-project: hotel-res
+        app: hr-client
+      name: hr-client
+#      annotations:
+#        sidecar.istio.io/inject: "true"
+    spec:
+      volumes:
+        - name: log-share
+          emptyDir: {}
+      containers:
+      - name: hr-client
+        image: public.ecr.aws/cilantro/hr-client:latest
+        volumeMounts:
+          - mountPath: /cilantrologs/
+            name: log-share
+        command:  ["/bin/sh", "-c"]
+        args:
+          - python /driver/wrk_runscript.py --wrk-logdir /cilantrologs/ --wrk-qps 3000 --wrk-duration 30 --wrk-num-threads 32 --wrk-num-connections 32 --wrk-url http://frontend.default.svc.cluster.local:5000
+        imagePullPolicy: Always
+      - name: cilantro-hr-client
+        image: public.ecr.aws/cilantro/cilantro:latest
+        volumeMounts:
+          - mountPath: /cilantrologs/
+            name: log-share
+        command: ["/bin/sh", "-c"]
+        args:
+          - python /cilantro/cilantro_clients/drivers/wrk_to_grpc_driver.py --log-folder-path /cilantrologs/ --grpc-port $(CILANTRO_SERVICE_SERVICE_PORT) --grpc-ip $(CILANTRO_SERVICE_SERVICE_HOST) --grpc-client-id hr-client --poll-frequency 1
+        imagePullPolicy: Always
+

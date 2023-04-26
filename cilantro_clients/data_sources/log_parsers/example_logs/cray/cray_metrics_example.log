@@ -1,0 +1,86 @@
+{
+    "alloc": 8,
+    "alloc_round_end": 8,
+    "incomplete_task_metrics": [
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591324.9687698
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591326.2806723
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591326.5016327
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591326.8289397
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591326.8292058
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591327.0457187
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591327.045906
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "submit_time": 1633591327.1539109
+        }
+    ],
+    "load_round_end": 421,
+    "load_round_total": 437,
+    "load_round_total_normalized": 437.0,
+    "round_end_time": 1633591329.1688008,
+    "round_start_time": 1633591319.0549028,
+    "task_metrics": [
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 5.700160264968872,
+            "latency": 5.700190544128418
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.011763572692871,
+            "latency": 7.01208758354187
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.232477903366089,
+            "latency": 7.232940912246704
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.559762954711914,
+            "latency": 7.560326814651489
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.55971097946167,
+            "latency": 7.560370922088623
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.776357173919678,
+            "latency": 7.7771100997924805
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.776305675506592,
+            "latency": 7.777148723602295
+        },
+        {
+            "enqueue_time": 1633591319.268541,
+            "job_runtime": 7.884411573410034,
+            "latency": 7.8853440284729
+        }
+    ],
+    "tasks_completed_count": 8
+}

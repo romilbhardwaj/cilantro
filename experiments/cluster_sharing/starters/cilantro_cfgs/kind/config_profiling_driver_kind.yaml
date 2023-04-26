@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cilantroscheduler
+  labels:
+    app: cilantroscheduler
+spec:
+  backoffLimit: 0
+  manualSelector: true
+  selector:
+    matchLabels:
+      app: cilantroscheduler
+  template:
+    metadata:
+      labels:
+        app: cilantroscheduler
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: cilantroscheduler
+        image: public.ecr.aws/cilantro/cilantro:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10000
+#        command: [ "/bin/sh" ]
+#        args: [ "-c", "while true; do echo hello; sleep 20;done" ]
+        command: [ "python", "/cilantro/demos/exp1/profiling_driver.py"]
+        args: ["--workload-type-to-profile", "dataserving", "--cluster-type", "kind",
+               "--env-descr", "test", "--real-or-dummy", "real"]
+#         args: ["--workload-type-to-profile", "dummydataserving", "--cluster-type", "kind",
+#                "--env-descr", "flat1", "--real-or-dummy", "dummy"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cilantro-service
+spec:
+  selector:
+    app: cilantroscheduler
+  ports:
+    - protocol: TCP
+      port: 10000
+      targetPort: 10000
+

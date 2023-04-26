@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: root--test--propdep
+  labels:
+    app: root--test--propdep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: root--test--propdep
+  template:
+    metadata:
+      labels:
+        app: root--test--propdep
+    spec:
+      containers:
+      - name: root--test--propdep
+        image: public.ecr.aws/cilantro/cilantro:latest
+        ports:
+        - containerPort: 10000
+        command: ["python", "/cilantro/cilantro_clients/driver/.py"]

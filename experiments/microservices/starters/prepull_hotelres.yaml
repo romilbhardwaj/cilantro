@@ -1,0 +1,37 @@
+###
+# There's a newer version available here:
+# https://github.com/itaysk/kube-imagepuller
+# All future updates will be made there.
+# Please also post you questions as issues on that repo instead of commenting here
+###
+
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: prepull
+spec:
+  selector:
+    matchLabels:
+      name: prepull
+  template:
+    metadata:
+      labels:
+        name: prepull
+    spec:
+      initContainers:
+      - name: prepull
+        image: docker
+        command: ["/bin/sh", "-c"]
+        args:
+          - docker pull public.ecr.aws/cilantro/cilantro:latest && docker pull public.ecr.aws/cilantro/hr-client:latest && docker pull mongo:4.4.6 && docker pull igorrudyk1/hotelreservation:latest && docker pull memcached && docker pull jaegertracing/all-in-one:latest && docker pull consul:latest
+        volumeMounts:
+        - name: docker
+          mountPath: /var/run
+      volumes:
+      - name: docker
+        hostPath:
+          path: /var/run
+      containers:
+      - name: pause
+        image: gcr.io/google_containers/pause

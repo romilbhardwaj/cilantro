@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package cilantro;
+
+// Interface exported by the cilantro server
+service UtilityMessaging {
+  rpc PublishUtility(UtilityMessage) returns (UtilityAck) {}
+}
+message UtilityMessage {
+  string app_id = 1;
+  float load = 2;
+  float alloc = 3;
+  float reward = 4;
+  float sigma = 5;
+  double event_start_time = 6;  // consider using google/protobuf/timestamp.proto
+  double event_end_time = 7;  // consider using google/protobuf/timestamp.proto
+  string debug = 8;
+}
+message UtilityAck {
+  int32 retcode = 1;
+}

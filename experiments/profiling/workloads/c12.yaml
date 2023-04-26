@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: root--c1--c12
+  labels:
+    app: root--c1--c12
+    is_workload: "true"
+    threshold: "7.2"
+    app_weight: "1.0"
+    app_unit_demand: "2.4"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: root--c1--c12
+  template:
+    metadata:
+      labels:
+        app: root--c1--c12
+    spec:
+      containers:
+      - name: root--c1--c12
+        image: nginx:1.15.4
+        ports:
+        - containerPort: 80

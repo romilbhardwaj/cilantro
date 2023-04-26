@@ -1,0 +1,46 @@
+{"consul": 1.0, "frontend": 1.0, "geo": 2.0, "hr-client": 1.0, "jaeger": 1.0, "memcached-profile": 1.0, "memcached-rate": 1.0, "memcached-reserve": 1.0, "mongodb-geo": 1.0, "mongodb-profile": 1.0, "mongodb-rate": 1.0, "mongodb-recommendation": 1.0, "mongodb-reservation": 1.0, "mongodb-user": 1.0, "profile": 1.0, "rate": 1.0, "recommendation": 1.0, "reservation": 1.0, "search": 1.0, "user": 1.0}
+100
+event_start_time:1649899913.888961
+Running 10s test @ http://frontend.default.svc.cluster.local:5000
+  16 threads and 16 connections
+  Thread calibration: mean lat.: 12.169ms, rate sampling interval: 54ms
+  Thread calibration: mean lat.: 15.884ms, rate sampling interval: 62ms
+  Thread calibration: mean lat.: 19.447ms, rate sampling interval: 81ms
+  Thread calibration: mean lat.: 14.304ms, rate sampling interval: 63ms
+  Thread calibration: mean lat.: 14.562ms, rate sampling interval: 51ms
+  Thread calibration: mean lat.: 16.028ms, rate sampling interval: 72ms
+  Thread calibration: mean lat.: 15.275ms, rate sampling interval: 64ms
+  Thread calibration: mean lat.: 13.343ms, rate sampling interval: 64ms
+  Thread calibration: mean lat.: 16.798ms, rate sampling interval: 65ms
+  Thread calibration: mean lat.: 16.027ms, rate sampling interval: 65ms
+  Thread calibration: mean lat.: 11.398ms, rate sampling interval: 41ms
+  Thread calibration: mean lat.: 15.551ms, rate sampling interval: 74ms
+  Thread calibration: mean lat.: 17.212ms, rate sampling interval: 86ms
+  Thread calibration: mean lat.: 16.607ms, rate sampling interval: 78ms
+  Thread calibration: mean lat.: 17.237ms, rate sampling interval: 72ms
+  Thread calibration: mean lat.: 15.793ms, rate sampling interval: 77ms
+  Thread Stats   Avg      Stdev     99%   +/- Stdev
+    Latency     -nanus    -nanus   0.00us    0.00%
+    Req/Sec       -nan      -nan   0.00      0.00%
+  Latency Distribution (HdrHistogram - Recorded Latency)
+ 50.000%    0.00us
+ 75.000%    0.00us
+ 90.000%    0.00us
+ 99.000%    0.00us
+ 99.900%    0.00us
+ 99.990%    0.00us
+ 99.999%    0.00us
+100.000%    0.00us
+
+  Detailed Percentile spectrum:
+       Value   Percentile   TotalCount 1/(1-Percentile)
+
+       0.000     1.000000            0          inf
+#[Mean    =         -nan, StdDeviation   =         -nan]
+#[Max     =        0.000, Total count    =            0]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  996 requests in 10.01s, 410.05KB read
+Requests/sec:     99.53
+Transfer/sec:     40.98KB
+event_end_time:1649899934.588961

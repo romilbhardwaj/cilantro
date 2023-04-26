@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cilantroscheduler
+  labels:
+    app: cilantroscheduler
+spec:
+  backoffLimit: 0
+  manualSelector: true
+  selector:
+    matchLabels:
+      app: cilantroscheduler
+  template:
+    metadata:
+      labels:
+        app: cilantroscheduler
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: cilantroscheduler
+        image: public.ecr.aws/cilantro/cilantro:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10000
+        command: [ "python", "/cilantro/demos/exp2/driver.py"]  # This command is run inside public.ecr.aws/cilantro/cilantro:latest image. If you update local file, remember to update the image too!
+        args: ["--real-or-dummy", "real",
+               "--policy", "propfair"
+               ]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cilantro-service
+spec:
+  selector:
+    app: cilantroscheduler
+  ports:
+    - protocol: TCP
+      port: 10000
+      targetPort: 10000

@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cilantroscheduler
+  labels:
+    app: cilantroscheduler
+spec:
+  backoffLimit: 0
+  manualSelector: true
+  selector:
+    matchLabels:
+      app: cilantroscheduler
+  template:
+    metadata:
+      labels:
+        app: cilantroscheduler
+    spec:
+      restartPolicy: Never
+      nodeSelector:
+        dedicated: scheduler
+      tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "scheduler"
+          effect: "NoSchedule"
+      containers:
+      - name: cilantroscheduler
+        image: public.ecr.aws/cilantro/cilantro:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10000
+        command: [ "python", "/cilantro/experiments/cluster_sharing/profiling_driver.py"]
+        args: ["--workload-type-to-profile", "craydb0", "--cluster-type", "eks",
+               "--env-descr", "profiling_env_1", "--real-or-dummy", "real",
+#         args: ["--workload-type-to-profile", "cray", "--cluster-type", "eks",
+#                "--env-descr", "craysleeptest", "--real-or-dummy", "real",
+#         args: ["--workload-type-to-profile", "craypredserv", "--cluster-type", "eks",
+#                "--env-descr", "craypredservtest", "--real-or-dummy", "real",
+#         args: ["--workload-type-to-profile", "craymltrain", "--cluster-type", "eks",
+#                "--env-descr", "craymltraintest", "--real-or-dummy", "real",
+#         args: ["--workload-type-to-profile", "craydb0", "--cluster-type", "eks",
+#                "--env-descr", "craydbtest", "--real-or-dummy", "real",
+#                "--alloc-expiration-time", "180"
+               ]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cilantro-service
+spec:
+  selector:
+    app: cilantroscheduler
+  ports:
+    - protocol: TCP
+      port: 10000
+      targetPort: 10000
+

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: root--c1--c11--client
+  labels:
+    app: root--c1--c11--client
+    is_workload: "false"  # Because this is false, the path (root--c1--c11--client) is irrelevant for cilantro.
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: root--c1--c11--client
+  template:
+    metadata:
+      labels:
+        app: root--c1--c11--client
+    spec:
+      containers:
+        - name: root--c1--c11--client
+          image: public.ecr.aws/cilantro/cilantro:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 10000
+          command: [ "python", "/cilantro/experiments/profiling/workloads/dummy_workload_driver.py"]
+#           command: [ "python", "/cilantro/cilantro_clients/drivers/k8s_to_grpc_driver.py" ]
+          args: ["--k8s-app-name", "root--c1--c11", "--grpc-port", "$(CILANTRO_SERVICE_SERVICE_PORT)", "--grpc-ip", "$(CILANTRO_SERVICE_SERVICE_HOST)", "--grpc-client-id", "root--c1--c11"]

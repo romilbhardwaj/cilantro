@@ -1,0 +1,6 @@
+kubernetes==18.20.0
+grpcio==1.38.1
+grpcio-tools==1.38.1
+pandas==1.3.0
+statsmodels==0.12.2
+dragonfly-opt==0.1.6

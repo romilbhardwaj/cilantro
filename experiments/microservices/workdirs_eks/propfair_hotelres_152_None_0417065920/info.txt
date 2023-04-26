@@ -1,0 +1,2 @@
+resource_quantity:::152.0
+alloc_granularity:::1

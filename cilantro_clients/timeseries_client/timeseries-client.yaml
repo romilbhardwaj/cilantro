@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timeseriesclient
+  labels:
+    app: timeseriesclient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timeseriesclient
+  template:
+    metadata:
+      labels:
+        app: timeseriesclient
+    spec:
+      containers:
+      - name: timeseriesclient
+        image: public.ecr.aws/cilantro/cilantro:latest
+        ports:
+        - containerPort: 10000
+        command: ["python",
+                  "/cilantro/cilantro_clients/timeseries_client/timeseries_client.py",
+                  "--client-id",
+                  "timeseriesclient",
+                  "--csv-file",
+                  "/cilantro/cilantro_clients/timeseries_client/example_timeseries.csv",
+                  "--roll-over"]

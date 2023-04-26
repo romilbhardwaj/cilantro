@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cilantroscheduler
+  labels:
+    app: cilantroscheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cilantroscheduler
+  template:
+    metadata:
+      labels:
+        app: cilantroscheduler
+    spec:
+      containers:
+      - name: cilantroscheduler
+        image: public.ecr.aws/cilantro/cilantro:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10000
+        command: [ "python", "/cilantro/experiments/profiling/cilantro_from_profiling.py"]
+        args: ["--profiled-info-dir", "/cilantro/experiments/profiling/profiled_results",
+               "--cluster-type", "kind", "--policy", "minerva"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cilantro-service
+spec:
+  selector:
+    app: cilantroscheduler
+  ports:
+    - protocol: TCP
+      port: 10000
+      targetPort: 10000

@@ -1,0 +1,8 @@
+# To copy profiled data 
+kubectl cp cilantroscheduler-7cf7d87757-lj5wl:/cilantro/profiling_data_logs profiling_data_logs/
+
+# To copy experiment results
+kubectl cp cilantroscheduler-86d6c5f977-559tj:/cilantro/workdirs ./workdirs/
+
+# To ssh into the container
+kubectl exec --stdin --tty cilantroscheduler-xxx -- /bin/bash

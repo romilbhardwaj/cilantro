@@ -1,0 +1,18 @@
+# A test cluster for checking eksctl setup.
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: fin-w1-clus1-1
+  region: us-west-1
+  version: '1.23'
+
+nodeGroups:
+  - name: fin-w1-clus1-1
+    instanceType: m5.2xlarge
+    desiredCapacity: 20
+    volumeSize: 30
+    volumeType: gp2
+    labels:
+      nodegroup-name: cilantro-test

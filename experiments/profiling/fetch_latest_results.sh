@@ -1,0 +1,1 @@
+watch -n 30 "kubectl cp $(kubectl get pods | awk '/cilantroscheduler/ {print $1;exit}'):/cilantro/workdirs ./workdirs_kind/ && wc -l workdirs_eks/$(ls -t workdirs_kind/ | head -n 1)/root--c2_dummy1.csv"

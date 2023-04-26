@@ -1,0 +1,229 @@
+(base) ubuntu@ip-172-31-38-50:~$ kubectl logs -f cilantroscheduler-jl5tt
+/usr/local/lib/python3.7/site-packages/dragonfly/utils/oper_utils.py:30: UserWarning: cannot import name 'direct' from 'dragonfly.utils.direct_fortran' (/usr/local/lib/python3.7/site-packages/dragonfly/utils/direct_fortran/__init__.py)
+Could not import Fortran direct library. Dragonfly can still be used, but might be slightly slower. To get rid of this warning, install a numpy compatible Fortran compiler (e.g. gfortran) and the python-dev package and reinstall Dragonfly.
+  warn('%s\n%s'%(e, fortran_err_msg))
+04-25 00:18:19 | INFO   | __main__                                 || Created Env: Env(#nodes=20, #leaf-nodes=19):: (consul, e0.05, t1.00), (frontend, e0.05, t1.00), (geo, e0.05, t1.00), (jaeger, e0.05, t1.00), (memcached-profile, e0.05, t1.00), (memcached-rate, e0.05, t1.00), (memcached-reserve, e0.05, t1.00), (mongodb-geo, e0.05, t1.00), (mongodb-profile, e0.05, t1.00), (mongodb-rate, e0.05, t1.00), (mongodb-recommendation, e0.05, t1.00), (mongodb-reservation, e0.05, t1.00), (mongodb-user, e0.05, t1.00), (profile, e0.05, t1.00), (rate, e0.05, t1.00), (recommendation, e0.05, t1.00), (reservation, e0.05, t1.00), (search, e0.05, t1.00), (user, e0.05, t1.00)..
+in root -1
+lf root--consul 1 1 -1 linear
+lf root--frontend 1 1 -1 linear
+lf root--geo 1 1 -1 linear
+lf root--jaeger 1 1 -1 linear
+lf root--memcached-profile 1 1 -1 linear
+lf root--memcached-rate 1 1 -1 linear
+lf root--memcached-reserve 1 1 -1 linear
+lf root--mongodb-geo 1 1 -1 linear
+lf root--mongodb-profile 1 1 -1 linear
+lf root--mongodb-rate 1 1 -1 linear
+lf root--mongodb-recommendation 1 1 -1 linear
+lf root--mongodb-reservation 1 1 -1 linear
+lf root--mongodb-user 1 1 -1 linear
+lf root--profile 1 1 -1 linear
+lf root--rate 1 1 -1 linear
+lf root--recommendation 1 1 -1 linear
+lf root--reservation 1 1 -1 linear
+lf root--search 1 1 -1 linear
+lf root--user 1 1 -1 linear
+04-25 00:18:19 | INFO   | root                                     || Created Env: Env(#nodes=20, #leaf-nodes=19):: (consul, e0.05, t1.00), (frontend, e0.05, t1.00), (geo, e0.05, t1.00), (jaeger, e0.05, t1.00), (memcached-profile, e0.05, t1.00), (memcached-rate, e0.05, t1.00), (memcached-reserve, e0.05, t1.00), (mongodb-geo, e0.05, t1.00), (mongodb-profile, e0.05, t1.00), (mongodb-rate, e0.05, t1.00), (mongodb-recommendation, e0.05, t1.00), (mongodb-reservation, e0.05, t1.00), (mongodb-user, e0.05, t1.00), (profile, e0.05, t1.00), (rate, e0.05, t1.00), (recommendation, e0.05, t1.00), (reservation, e0.05, t1.00), (search, e0.05, t1.00), (user, e0.05, t1.00).,
+in root -1
+lf root--consul 1 1 -1 linear
+lf root--frontend 1 1 -1 linear
+lf root--geo 1 1 -1 linear
+lf root--jaeger 1 1 -1 linear
+lf root--memcached-profile 1 1 -1 linear
+lf root--memcached-rate 1 1 -1 linear
+lf root--memcached-reserve 1 1 -1 linear
+lf root--mongodb-geo 1 1 -1 linear
+lf root--mongodb-profile 1 1 -1 linear
+lf root--mongodb-rate 1 1 -1 linear
+lf root--mongodb-recommendation 1 1 -1 linear
+lf root--mongodb-reservation 1 1 -1 linear
+lf root--mongodb-user 1 1 -1 linear
+lf root--profile 1 1 -1 linear
+lf root--rate 1 1 -1 linear
+lf root--recommendation 1 1 -1 linear
+lf root--reservation 1 1 -1 linear
+lf root--search 1 1 -1 linear
+lf root--user 1 1 -1 linear
+
+04-25 00:18:19 | DEBUG  | asyncio                                  || Using selector: EpollSelector
+04-25 00:18:19 | DEBUG  | cilantro.backends.k8s.kubernetes_manager || Detected running inside cluster. Using incluster auth.
+04-25 00:18:19 | DEBUG  | grpc._cython.cygrpc                      || Using AsyncIOEngine.POLLER as I/O engine
+04-25 00:18:19 | INFO   | __main__                                 || Initialised policy <cilantro.policies.prop_fairness.PropFairness object at 0x7fec8ddc4cd0>.
+04-25 00:18:19 | INFO   | cilantro.data_loggers.data_logger_bank   || Initiated writing to disk loop for data logger in dir workdirs/propfair_hotelres_32_None_0425001819.
+04-25 00:18:19 | INFO   | __main__                                 || Workloads ready!
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'consul', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'consul', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'consul', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'frontend', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'frontend', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'frontend', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'geo', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'geo', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'geo', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'jaeger', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'jaeger', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'jaeger', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-reserve', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-reserve', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'memcached-reserve', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-geo', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-geo', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-geo', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-recommendation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-recommendation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-recommendation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-reservation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-reservation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-reservation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-user', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-user', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'mongodb-user', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'profile', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'rate', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'recommendation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'recommendation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'recommendation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'reservation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'reservation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'reservation', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'search', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'search', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'search', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert threshold to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'user', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_weight to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'user', 'is_workload': 'true'}
+04-25 00:18:19 | WARNING | cilantro.backends.k8s.kubernetes_manager || Unable to convert app_unit_demand to float or value was not found while parsing k8s labels. Using default 1. Labels were {'io.kompose.service': 'user', 'is_workload': 'true'}
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--consul, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--consul to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--frontend, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--frontend to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--geo, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--geo to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--jaeger, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--jaeger to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--memcached-profile, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--memcached-profile to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--memcached-rate, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--memcached-rate to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--memcached-reserve, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--memcached-reserve to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--mongodb-geo, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--mongodb-geo to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--mongodb-profile, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--mongodb-profile to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--mongodb-rate, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--mongodb-rate to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--mongodb-recommendation, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--mongodb-recommendation to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--mongodb-reservation, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--mongodb-reservation to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--mongodb-user, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--mongodb-user to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--profile, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--profile to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--rate, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--rate to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--recommendation, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--recommendation to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--reservation, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--reservation to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--search, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--search to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || AppAddEvent, app: root--user, threshold: 1,weight: 1, type:EventTypes.APP_ADDED
+04-25 00:18:19 | INFO   | cilantro.scheduler.cilantroscheduler     || Adding root--user to data logger bank in CilantroScheduler.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Allocation timeout, type:EventTypes.ALLOC_TIMEOUT
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Received new allocation from policy - {'root--consul': 2, 'root--frontend': 2, 'root--geo': 1, 'root--jaeger': 1, 'root--memcached-profile': 2, 'root--memcached-rate': 2, 'root--memcached-reserve': 2, 'root--mongodb-geo': 2, 'root--mongodb-profile': 2, 'root--mongodb-rate': 2, 'root--mongodb-recommendation': 2, 'root--mongodb-reservation': 2, 'root--mongodb-user': 1, 'root--profile': 1, 'root--rate': 2, 'root--recommendation': 2, 'root--reservation': 1, 'root--search': 2, 'root--user': 1}
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Executed resource allocation from framework manager.
+04-25 00:18:19 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:24 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:18:29 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:18:34 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:18:39 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:18:40 | DEBUG  | cilantro.scheduler.cilantroscheduler     || UtilityUpdateEvent, app: hr-client, load: 25006.0, reward: 14333.494140625,alloc: -1.0, sigma: 4158.3232421875, type:EventTypes.UTILITY_UPDATE, debug: {"runtime": 29.98, "throughput": 834.14, "num_operations": 25006.0, "avg_latency": 14333.494, "stddev_latency": 4158.323, "p50": 14310.0, "p90": 20090.0, "p99": 21480.0, "p999": 21860.0, "p9999": 21940.0, "p100": 21940.0, "event_start_time": 1682381889.460351, "event_end_time": 1682381919.9956908, "target_qps": 3000.0, "load": 89940.0, "allocs": {"root--consul": 1.1639344262295082, "root--frontend": 1.1967213114754098, "root--geo": 1.0, "root--jaeger": 1.0, "root--memcached-profile": 1.2295081967213115, "root--memcached-rate": 1.2950819672131149, "root--memcached-reserve": 1.2622950819672132, "root--mongodb-geo": 1.2622950819672132, "root--mongodb-profile": 1.098360655737705, "root--mongodb-rate": 1.0, "root--mongodb-recommendation": 1.098360655737705, "root--mongodb-reservation": 1.0655737704918034, "root--mongodb-user": 1.0, "root--profile": 1.0, "root--rate": 1.0655737704918034, "root--recommendation": 1.1639344262295082, "root--reservation": 1.0, "root--search": 1.0327868852459017, "root--user": 1.0}}
+04-25 00:18:40 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:18:44 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 1 data for timeseries model hr-client.
+04-25 00:18:44 | DEBUG  | cilantro.timeseries.arima                || Not training TS model hr-client since num-data = 1.
+04-25 00:18:49 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:18:54 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:18:59 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:04 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:09 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:10 | DEBUG  | cilantro.scheduler.cilantroscheduler     || UtilityUpdateEvent, app: hr-client, load: 35384.0, reward: 11934.173828125,alloc: -1.0, sigma: 3497.281005859375, type:EventTypes.UTILITY_UPDATE, debug: {"runtime": 29.97, "throughput": 1180.48, "num_operations": 35384.0, "avg_latency": 11934.174, "stddev_latency": 3497.281, "p50": 11970.0, "p90": 16710.0, "p99": 18430.0, "p999": 19040.0, "p9999": 19150.0, "p100": 19230.0, "event_start_time": 1682381919.9963667, "event_end_time": 1682381950.034857, "target_qps": 3000.0, "load": 89910.0, "allocs": {"root--consul": 2.0, "root--frontend": 2.0, "root--geo": 1.0, "root--jaeger": 1.0, "root--memcached-profile": 2.0, "root--memcached-rate": 2.0, "root--memcached-reserve": 2.0, "root--mongodb-geo": 1.0, "root--mongodb-profile": 1.0, "root--mongodb-rate": 1.0, "root--mongodb-recommendation": 1.0, "root--mongodb-reservation": 1.0, "root--mongodb-user": 1.0, "root--profile": 1.0, "root--rate": 2.0, "root--recommendation": 2.0, "root--reservation": 1.0, "root--search": 2.0, "root--user": 1.0}}
+04-25 00:19:10 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:19:14 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 1 data for timeseries model hr-client.
+04-25 00:19:14 | DEBUG  | cilantro.timeseries.arima                || Not training TS model hr-client since num-data = 2.
+04-25 00:19:19 | DEBUG  | cilantro.data_loggers.simple_data_logger || [leaf=hr-client] Wrote 2 data to workdirs/propfair_hotelres_32_None_0425001819/hr-client.csv.
+04-25 00:19:19 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:24 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:29 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:34 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:39 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:40 | DEBUG  | cilantro.scheduler.cilantroscheduler     || UtilityUpdateEvent, app: hr-client, load: 35079.0, reward: 12150.970703125,alloc: -1.0, sigma: 3492.81494140625, type:EventTypes.UTILITY_UPDATE, debug: {"runtime": 29.99, "throughput": 1169.55, "num_operations": 35079.0, "avg_latency": 12150.971, "stddev_latency": 3492.815, "p50": 12170.0, "p90": 16940.0, "p99": 18280.0, "p999": 18730.0, "p9999": 19090.0, "p100": 19120.0, "event_start_time": 1682381950.0354269, "event_end_time": 1682381980.5714805, "target_qps": 3000.0, "load": 89970.0, "allocs": {"root--consul": 2.0, "root--frontend": 2.0, "root--geo": 1.0, "root--jaeger": 1.0, "root--memcached-profile": 2.0, "root--memcached-rate": 2.0, "root--memcached-reserve": 2.0, "root--mongodb-geo": 1.0, "root--mongodb-profile": 1.0, "root--mongodb-rate": 1.0, "root--mongodb-recommendation": 1.0, "root--mongodb-reservation": 1.0, "root--mongodb-user": 1.0, "root--profile": 1.0, "root--rate": 2.0, "root--recommendation": 2.0, "root--reservation": 1.0, "root--search": 2.0, "root--user": 1.0}}
+04-25 00:19:40 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:19:44 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 1 data for timeseries model hr-client.
+04-25 00:19:44 | DEBUG  | cilantro.timeseries.arima                || Not training TS model hr-client since num-data = 3.
+04-25 00:19:49 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:54 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:19:59 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:04 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:09 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:11 | DEBUG  | cilantro.scheduler.cilantroscheduler     || UtilityUpdateEvent, app: hr-client, load: 35189.0, reward: 12020.58984375,alloc: -1.0, sigma: 3507.197021484375, type:EventTypes.UTILITY_UPDATE, debug: {"runtime": 29.97, "throughput": 1174.17, "num_operations": 35189.0, "avg_latency": 12020.59, "stddev_latency": 3507.197, "p50": 11900.0, "p90": 16910.0, "p99": 18430.0, "p999": 19020.0, "p9999": 19330.0, "p100": 19330.0, "event_start_time": 1682381980.5720205, "event_end_time": 1682382011.1058853, "target_qps": 3000.0, "load": 89910.0, "allocs": {"root--consul": 2.0, "root--frontend": 2.0, "root--geo": 1.0, "root--jaeger": 1.0, "root--memcached-profile": 2.0, "root--memcached-rate": 2.0, "root--memcached-reserve": 2.0, "root--mongodb-geo": 1.0, "root--mongodb-profile": 1.0, "root--mongodb-rate": 1.0327868852459017, "root--mongodb-recommendation": 1.0327868852459017, "root--mongodb-reservation": 1.0, "root--mongodb-user": 1.0, "root--profile": 1.0, "root--rate": 2.0, "root--recommendation": 2.0, "root--reservation": 1.0, "root--search": 2.0, "root--user": 1.0}}
+04-25 00:20:11 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:20:14 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 1 data for timeseries model hr-client.
+/usr/local/lib/python3.7/site-packages/statsmodels/tsa/statespace/sarimax.py:868: UserWarning: Too few observations to estimate starting parameters for ARMA and trend. All parameters except for variances will be set to zeros.
+  ' zeros.' % warning_description)
+04-25 00:20:19 | DEBUG  | cilantro.data_loggers.simple_data_logger || [leaf=hr-client] Wrote 2 data to workdirs/propfair_hotelres_32_None_0425001819/hr-client.csv.
+04-25 00:20:19 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:24 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:29 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:34 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:39 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:41 | DEBUG  | cilantro.scheduler.cilantroscheduler     || UtilityUpdateEvent, app: hr-client, load: 35586.0, reward: 11662.23828125,alloc: -1.0, sigma: 3560.302978515625, type:EventTypes.UTILITY_UPDATE, debug: {"runtime": 30.0, "throughput": 1186.09, "num_operations": 35586.0, "avg_latency": 11662.238, "stddev_latency": 3560.303, "p50": 11440.0, "p90": 16790.0, "p99": 18250.0, "p999": 18840.0, "p9999": 19020.0, "p100": 19070.0, "event_start_time": 1682382011.1064453, "event_end_time": 1682382041.6416357, "target_qps": 3000.0, "load": 90000.0, "allocs": {"root--consul": 2.0, "root--frontend": 2.0, "root--geo": 1.0, "root--jaeger": 1.0, "root--memcached-profile": 2.0, "root--memcached-rate": 2.0, "root--memcached-reserve": 2.0, "root--mongodb-geo": 1.0, "root--mongodb-profile": 1.0, "root--mongodb-rate": 1.0, "root--mongodb-recommendation": 1.0, "root--mongodb-reservation": 1.0, "root--mongodb-user": 1.0, "root--profile": 1.0, "root--rate": 2.0, "root--recommendation": 2.0, "root--reservation": 1.0, "root--search": 2.0, "root--user": 1.0}}
+04-25 00:20:41 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:20:44 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 1 data for timeseries model hr-client.
+/usr/local/lib/python3.7/site-packages/statsmodels/tsa/statespace/sarimax.py:966: UserWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  warn('Non-stationary starting autoregressive parameters'
+04-25 00:20:49 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:54 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:59 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Allocation timeout, type:EventTypes.ALLOC_TIMEOUT
+04-25 00:20:59 | DEBUG  | cilantro.timeseries.arima                || [ARIMA: hr-client] Forecasted with 5 data.
+04-25 00:20:59 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Received new allocation from policy - {'root--consul': 1, 'root--frontend': 1, 'root--geo': 2, 'root--jaeger': 2, 'root--memcached-profile': 2, 'root--memcached-rate': 2, 'root--memcached-reserve': 2, 'root--mongodb-geo': 1, 'root--mongodb-profile': 1, 'root--mongodb-rate': 2, 'root--mongodb-recommendation': 1, 'root--mongodb-reservation': 2, 'root--mongodb-user': 2, 'root--profile': 2, 'root--rate': 2, 'root--recommendation': 2, 'root--reservation': 2, 'root--search': 1, 'root--user': 2}
+04-25 00:20:59 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
+04-25 00:20:59 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Executed resource allocation from framework manager.
+04-25 00:20:59 | DEBUG  | cilantro.scheduler.cilantroscheduler     || Waiting for event.
+04-25 00:21:04 | DEBUG  | cilantro.timeseries.ts_base_learner      || Received 0 data for timeseries model hr-client.
