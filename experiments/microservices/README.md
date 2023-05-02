@@ -104,7 +104,11 @@ If you do not have access cloud or a kubernetes cluster, you can use kind to pro
    ./starters/fetch_results.sh
    ```
    This will run a script that periodically fetches logs from Cilantro and saves them in `workdirs_eks` directory. You can stop it once it has fetched results once. 
-6. Repeat steps 2-5 for each baseline you want to run by changing `POLICY` variable. Here's each policy and their description.
+6. After the experiment has run and results have been fetched, you can clean up the cluster (i.e., delete all pods and services) by running:
+   ```sh
+   ./starters/clean_cluster.sh
+   ```
+7. Repeat steps 1-6 for each baseline you want to run by changing `POLICY` variable. Here's each policy and their description.
    * `propfair` - Proportional Fairness, always equally allocates the resources among microservices.
    * `ucbopt` - Cilantro's upper confidence bound policy
    * `msile` - Epsilon-greedy with e=1/3.
