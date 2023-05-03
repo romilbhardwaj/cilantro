@@ -146,8 +146,12 @@ If you do not have access cloud or a kubernetes cluster, you can use kind to pro
    ```sh
    ./starters/fetch_results.sh
    ```
-   This will run a script that periodically fetches logs from Cilantro and saves them in `workdirs_eks` directory. You can stop it after it has fetched results once. 
-5. Repeat steps 2-4 for each baseline you want to run by changing `POLICY` variable. Each policy should be run for at least 8 hours. Here's each policy and their description.
+   This will run a script that fetches logs from Cilantro and saves them in `workdirs_eks` directory. 
+5. After the experiment has run and results have been fetched, you can clean up the cluster (i.e., delete all pods and services) by running:
+   ```sh
+   ./starters/clean_kind_cluster.sh
+   ```
+6. Repeat steps 2-4 for each baseline you want to run by changing `POLICY` variable. Each policy should be run for at least 8 hours. Here's each policy and their description.
    * `propfair` - Proportional Fairness (`Resource-fair` in the paper), always equally allocates the resources among microservices.
    * `mmf` - No-Justified Complaints (NJC) resource allocation with oracular information (`Oracle-NJC` in the paper).
    * `mmflearn` - Cilantro's learned NJC resource allocation policy (`Cilantro-NJC` in the paper).
@@ -164,14 +168,14 @@ If you do not have access cloud or a kubernetes cluster, you can use kind to pro
    * `quasar` - Our adaptation of the policy presented in [Quasar](https://dl.acm.org/doi/10.1145/2541940.2541941) (`Quasar` in the paper).
    * `parties` - Our adaptation of the policy presented in [PARTIES](https://dl.acm.org/doi/10.1145/3297858.3304005) (`PARTIES` in the paper).
    
-6. After the experiment is done, clean up your cluster by running:
+7. After all experiments are done, clean up your cluster by running:
    ```
    # If running EKS
     ./starters/delete_eks_cluster.sh
    # If running kind cluster
     ./starters/delete_kind_cluster.sh
    ```
-7. To plot the results fetched by the `fetch_results.sh` script, run:
+8. To plot the results fetched by the `fetch_results.sh` script, run:
    ```sh
     python plot_results.py
     ```
