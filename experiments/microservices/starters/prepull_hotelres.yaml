@@ -1,10 +1,7 @@
-###
-# There's a newer version available here:
-# https://github.com/itaysk/kube-imagepuller
-# All future updates will be made there.
-# Please also post you questions as issues on that repo instead of commenting here
-###
-
+# Prepulls images needed for Cilantro microservices experiment and keeps them warm for faster startup
+# kubectl apply -f prepull_hotelres.yaml
+# After all images have been pulled (i.e., all daemonset pods are running), delete the prepull daemonset:
+# kubectl delete -f prepull_hotelres.yaml
 
 apiVersion: apps/v1
 kind: DaemonSet

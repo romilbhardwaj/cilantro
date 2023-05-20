@@ -13,7 +13,7 @@ WORK_DIRS = ('workdirs_eks', 'exp_env_1') # Experimental 1
 METHOD_ORDER = [
     'mmf',
     'mmflearn',
-    # 'utilwelforacle',
+    'utilwelforacle',
     'utilwelflearn',
     # 'egalwelforacle',
     # 'egalwelflearn',

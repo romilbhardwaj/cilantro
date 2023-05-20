@@ -4,15 +4,15 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: clus1-inst1
+  name: clus1-inst1-clus2
   region: us-west-2
   version: '1.23'
 
 nodeGroups:
-  - name: clus1-inst1
+  - name: clus1-inst1-clus2
     instanceType: m5.xlarge
     desiredCapacity: 51
     volumeSize: 20
     volumeType: gp2
     labels:
-      nodegroup-name: cilantro-test-clus
+      nodegroup-name: cilantro-test-clus2
