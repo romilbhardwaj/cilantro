@@ -49,4 +49,18 @@ Please follow [`experiments/cluster_sharing/README.md`](./experiments/cluster_sh
 * [`./README_DEV.md`](./README_DEV.md) contains instructions for developers who want to modify and extend Cilantro.
 
 ## Citing Cilantro
-Coming soon!
+If you found Cilantro useful, you can cite us:
+```
+@inproceedings {288542,
+author = {Romil Bhardwaj and Kirthevasan Kandasamy and Asim Biswal and Wenshuo Guo and Benjamin Hindman and Joseph Gonzalez and Michael Jordan and Ion Stoica},
+title = {Cilantro: {Performance-Aware} Resource Allocation for General Objectives via Online Feedback},
+booktitle = {17th USENIX Symposium on Operating Systems Design and Implementation (OSDI 23)},
+year = {2023},
+isbn = {978-1-939133-34-2},
+address = {Boston, MA},
+pages = {623--643},
+url = {https://www.usenix.org/conference/osdi23/presentation/bhardwaj},
+publisher = {USENIX Association},
+month = jul,
+}
+```
