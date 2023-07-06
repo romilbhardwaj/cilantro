@@ -12,7 +12,7 @@ optimizing for the user stated [objective](https://github.com/romilbhardwaj/cila
 Objectives may be defined on individual utilities reported by jobs, such as 
 latency and throughput SLOs.
 
-For more details, please refer to our [OSDI 2023 paper](#).
+For more details, please refer to our [OSDI 2023 paper](https://people.eecs.berkeley.edu/~romilb/files/cilantro_osdi23_paper.pdf).
 
 ## Running Cilantro Experiments
 
